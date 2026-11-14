@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Native Crunch - Interactive Product Poster</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="poster-header">
+        <span class="badge-location">Interactive Academic Poster · Cartagena & Turbaco, Colombia</span>
+        <h1>Native Crunch: Crispy Tropical Fruit Chips</h1>
+        <p class="subtitle">Hover and click the video to explore the business plan</p>
+    </header>
+
+    <main class="interactive-stage">
+        <!-- CONTENEDOR PRINCIPAL -->
+        <div class="product-explorer-container">
+            
+            <!-- VIDEO EN BUCLE INFINITO CON MOVIMIENTO Y EFECTO 3D -->
+            <div class="product-card-center" id="product-card" onclick="toggleMenu()" onmousemove="handleHover3D(event)" onmouseleave="resetHover3D()">
+                <div class="pulse-ring"></div>
+                <div class="shine-effect"></div>
+                
+                <!-- VIDEO: autoplay (se reproduce solo), muted (sin sonido para permitir autoplay en navegadores), loop (bucle infinito), playsinline (móviles) -->
+                <video autoplay muted loop playsinline id="main-product-video">
+                    <!-- CAMBIA "tu-video.mp4" POR EL NOMBRE EXACTO DE TU ARCHIVO DE VIDEO EN LA CARPETA -->
+                    <source src="video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <div class="click-badge" id="click-badge">✨ Click to open menu</div>
+            </div>
+
+            <!-- LOS 4 BOTONES INTERACTIVOS A UN LADO -->
+            <div class="side-buttons" id="side-buttons">
+                <button class="nav-btn" onclick="openSection('sec-1', this)">
+                    <span class="btn-num">1</span> Product Features
+                </button>
+                <button class="nav-btn" onclick="openSection('sec-2', this)">
+                    <span class="btn-num">2</span> Target Market
+                </button>
+                <button class="nav-btn" onclick="openSection('sec-3', this)">
+                    <span class="btn-num">3</span> Positioning Strategies
+                </button>
+                <button class="nav-btn" onclick="openSection('sec-4', this)">
+                    <span class="btn-num">4</span> Product Specifications
+                </button>
+            </div>
+
+        </div>
+
+        <!-- PANEL DE INFORMACIÓN DESPLEGABLE INFERIOR -->
+        <section class="info-panel" id="info-panel">
+            <button class="close-panel-btn" onclick="closePanel()">✕ Close</button>
+
+            <!-- CONTENIDO PUNTO 1 -->
+            <div class="section-content" id="sec-1">
+                <h2>1. Product Features</h2>
+                <p class="lead-text">Crispy Colombian tropical fruit chips, available in three flavors: <strong>pineapple, mango, and banana</strong>. A convenient snack to enjoy at any time, with no frying.</p>
+                <div class="features-grid">
+                    <div class="feature-item"><strong>🍍 Flavors:</strong> Pineapple, mango, and banana.</div>
+                    <div class="feature-item"><strong>✨ Texture:</strong> Crispy, like a traditional chip.</div>
+                    <div class="feature-item"><strong>🌱 Main ingredients:</strong> Dehydrated fruit.</div>
+                    <div class="feature-item"><strong>📦 Presentation:</strong> Individual 30 g bag.</div>
+                    <div class="feature-item"><strong>💚 Benefits:</strong> Natural fruit, frying-free process.</div>
+                    <div class="feature-item"><strong>🕒 Occasions:</strong> Between meals, at the office, at university, before or after training.</div>
+                </div>
+            </div>
+
+            <!-- CONTENIDO PUNTO 2 -->
+            <div class="section-content" id="sec-2">
+                <h2>2. Target Market</h2>
+                <p class="lead-text"><strong>Primary Market:</strong> Young adults and adults aged 18 to 35 in Cartagena and Turbaco.</p>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Segment</th>
+                            <th>Profile</th>
+                            <th>What they look for</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>University students</strong></td>
+                            <td>18 to 25 years old</td>
+                            <td>Affordable, convenient snacks that look good on social media</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Young professionals</strong></td>
+                            <td>25 to 35 years old</td>
+                            <td>Healthy options for the office, willing to pay a bit more for quality</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Active people</strong></td>
+                            <td>18 to 35 years old</td>
+                            <td>Natural snacks for energy, at the gym or while exercising</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="extra-market-box">
+                    <p><strong>Secondary Market:</strong> Parents looking for snacks with no added sugar for their children, and vegetarian or vegan consumers.</p>
+                    <p><strong>Psychographic Profile:</strong> People who care about their diet without giving up flavor, who value local products and prefer brands with their own identity.</p>
+                </div>
+            </div>
+
+            <!-- CONTENIDO PUNTO 3 -->
+            <div class="section-content" id="sec-3">
+                <h2>3. Positioning Strategies</h2>
+                <div class="strategy-grid">
+                    <div class="strategy-box">
+                        <h3>🌿 Brand Pillars</h3>
+                        <ul>
+                            <li>Origin: Colombian tropical fruit, with a Caribbean identity.</li>
+                            <li>Naturalness: Fruit as the main ingredient, no frying.</li>
+                            <li>Convenience: A snack for any place and moment.</li>
+                            <li>Flavor: Crunchy, with recognizable flavors.</li>
+                        </ul>
+                    </div>
+                    <div class="strategy-box">
+                        <h3>🎯 Differentiation & Price</h3>
+                        <ul>
+                            <li>Vs. Economy nut mixes: Made from fruit, with a crispy texture.</li>
+                            <li>Vs. Premium brands (Good Chips): More accessible price and local origin.</li>
+                            <li>Base Price: $6,900 COP per 30 g bag.</li>
+                        </ul>
+                    </div>
+                    <div class="strategy-box">
+                        <h3>🚀 Sales Channels by Phase</h3>
+                        <ul>
+                            <li>Phase 1: Social media, WhatsApp, cafés, health food stores, allied gyms & universities in Cartagena.</li>
+                            <li>Phase 2: Delivery apps & neighborhood stores in Cartagena and Turbaco.</li>
+                            <li>Phase 3: Supermarkets (when volume & costs are defined).</li>
+                        </ul>
+                    </div>
+                    <div class="strategy-box">
+                        <h3>💪 Gym Partnerships & Promotion</h3>
+                        <ul>
+                            <li>Gyms: Reception POS, post-workout samples, 10% member discount code, trainer ambassadors & sports sponsorships.</li>
+                            <li>Promotion: Free tastings, Instagram/TikTok short videos, and Cartagena fitness/healthy microinfluencers.</li>
+                            <li>Key Messages: <em>"Crispy, healthy, and delicious"</em> · <em>"Made with Colombian fruit"</em> · <em>"Your snack to go"</em>.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTENIDO PUNTO 4 -->
+            <div class="section-content" id="sec-4">
+                <h2>4. Product Specifications</h2>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Field</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Brand name</strong></td><td>Native Crunch</td></tr>
+                            <tr><td><strong>Category</strong></td><td>Fruit snacks / fruit chips</td></tr>
+                            <tr><td><strong>Product type</strong></td><td>Crispy chips of dehydrated or baked fruit</td></tr>
+                            <tr><td><strong>Flavors</strong></td><td>Pineapple, mango, banana</td></tr>
+                            <tr><td><strong>Ingredients</strong></td><td>Dehydrated pineapple, mango, and/or banana. Full list to be confirmed</td></tr>
+                            <tr><td><strong>Net weight</strong></td><td>30 g (individual bag) · 90 g (gym pack of 3)</td></tr>
+                            <tr><td><strong>Base price</strong></td><td>$6,900 COP (30 g bag) · $18,500 COP (pack of 3). Hypothesis to be validated</td></tr>
+                            <tr><td><strong>Member discount</strong></td><td>10% with allied gym code</td></tr>
+                            <tr><td><strong>Origin</strong></td><td>Colombia</td></tr>
+                            <tr><td><strong>Process</strong></td><td>Washing, cutting, dehydrating or baking. No frying</td></tr>
+                            <tr><td><strong>Packaging</strong></td><td>Sealed bag with moisture and light barrier</td></tr>
+                            <tr><td><strong>Storage</strong></td><td>Cool, dry place. Seal the package well after opening</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
